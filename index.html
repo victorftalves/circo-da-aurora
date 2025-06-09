@@ -64,14 +64,28 @@
                 min-width: 80px;
             }
         }
+        /* Animação para balões (simulando flutuar) */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Cabeçalho - Tema Circo -->
     <header class="bg-vermelho-vibrante text-white p-4 shadow-xl font-fredoka-one">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-amarelo-solar drop-shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-amarelo-solar drop-shadow-lg flex items-center">
                 O Circo da Aurora!
+                <!-- Ícone de balão SVG para estética de circo -->
+                <svg class="w-8 h-8 ml-3 text-amarelo-solar animate-float" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z" clip-rule="evenodd"></path>
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                </svg>
             </h1>
             <nav>
                 <ul class="flex flex-wrap justify-center md:space-x-6 text-lg">
@@ -87,7 +101,7 @@
 
     <!-- Seção de Boas-Vindas / Hero -->
     <section id="inicio" class="relative bg-azul-claro text-center py-20 px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-30">
+        <div class="absolute inset-0 z-0 opacity-40"> <!-- Opacidade da imagem de fundo ajustada para melhorar a visibilidade do texto -->
             <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA ARTE PRINCIPAL DO SEU TEMA DE CIRCO -->
             <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
             <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+do+Circo+da+Aurora" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
@@ -96,16 +110,26 @@
             <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
                 É O ANIVERSÁRIO DA AURORA!
             </h2>
-            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-md">
+            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-lg text-white"> <!-- Texto principal agora com 'text-white' explícito e 'drop-shadow-lg' -->
                 Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
             </p>
             <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA FOTO DA AURORA -->
             <!-- Exemplo: <img src="URL_DA_FOTO_DA_AURORA.jpg" alt="Foto da Aurora" class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-amarelo-solar shadow-lg mb-8"> -->
             <img src="https://placehold.co/200x200/FFFFFF/E63946?text=Foto+Aurora" alt="Foto da Aurora" class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-amarelo-solar shadow-lg mb-8">
-            <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-md">
+            <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-lg text-white"> <!-- Texto principal agora com 'text-white' explícito e 'drop-shadow-lg' -->
                 <!-- POR FAVOR, EDITE ESTA MENSAGEM DE BOAS-VINDAS DOS PAIS -->
                 Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
             </p>
+        </div>
+        <!-- Placeholder para GIF de palhaço na seção principal (canto inferior esquerdo) -->
+        <div class="absolute bottom-5 left-5 md:left-10 z-20 w-24 h-24">
+            <!-- POR FAVOR, SUBSTITUA O 'src' DESTA IMAGEM PELO URL REAL DO SEU GIF DE PALHAÇO -->
+            <img src="https://placehold.co/100x100/FFD166/E63946?text=GIF+Palhaço" alt="GIF de palhaço feliz" class="rounded-full shadow-lg border-2 border-amarelo-solar animate-float">
+        </div>
+        <!-- Placeholder para GIF de palhaço na seção principal (canto superior direito) -->
+        <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
+            <!-- POR FAVOR, SUBSTITUA O 'src' DESTA IMAGEM PELO URL REAL DO SEU GIF DE PALHAÇO -->
+            <img src="https://placehold.co/100x100/A2D2FF/E63946?text=GIF+Palhaço" alt="GIF de palhaço brincando" class="rounded-full shadow-lg border-2 border-vermelho-vibrante animate-float">
         </div>
     </section>
 
@@ -142,7 +166,7 @@
                 Save the Date!
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="bg-azul-claro p-8 rounded-xl shadow-lg text-gray-800 border-b-4 border-amarelo-solar">
+                <div class="bg-azul-claro p-8 rounded-xl shadow-lg text-white border-b-4 border-amarelo-solar"> <!-- Todos os textos nesta div agora são 'text-white' para melhor contraste -->
                     <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando será o espetáculo?</h4>
                     <p class="text-lg font-poppins mb-4">
                         <span class="font-bold text-vermelho-vibrante">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
@@ -386,4 +410,3 @@
     </script>
 </body>
 </html>
-

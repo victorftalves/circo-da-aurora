@@ -39,17 +39,7 @@
             overflow-x: hidden; /* Evita rolagem horizontal */
         }
         /* Efeitos visuais de circo */
-        .circus-stripe-bg {
-            background-image: repeating-linear-gradient(
-                45deg,
-                var(--color-vermelho-vibrante) 0px,
-                var(--color-vermelho-vibrante) 20px,
-                var(--color-branco) 20px,
-                var(--color-branco) 40px
-            );
-            background-size: cover;
-            padding: 2rem 0;
-        }
+        /* REMOVIDO: .circus-stripe-bg */
 
         .countdown-digit {
             @apply bg-white text-gray-800 text-5xl font-extrabold p-6 rounded-xl shadow-lg m-2;
@@ -60,7 +50,7 @@
 
         /* Corrigindo a visibilidade do texto "Dias", "Horas", etc. */
         .countdown-digit > div {
-            color: var(--color-vermelho-vibrante); /* Cor vibrante para as legendas */
+            color: var(--color-amarelo-solar); /* Alterado para amarelo solar para alto contraste */
             font-weight: 600; /* Mais negrito */
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra para destacar */
         }
@@ -137,7 +127,7 @@
     </header>
 
     <!-- Seção de Boas-Vindas / Hero -->
-    <section id="inicio" class="relative bg-azul-claro text-center py-20 px-4 overflow-hidden">
+    <section id="inicio" class="relative bg-vermelho-vibrante text-center py-20 px-4 overflow-hidden"> <!-- Alterado para vermelho vibrante -->
         <div class="absolute inset-0 z-0 opacity-40"> <!-- Opacidade da imagem de fundo ajustada para melhorar a visibilidade do texto -->
             <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA ARTE PRINCIPAL DO SEU TEMA DE CIRCO -->
             <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
@@ -175,7 +165,7 @@
     </section>
 
     <!-- Seção de Contagem Regressiva -->
-    <section class="py-12 bg-vermelho-vibrante text-white text-center circus-stripe-bg" id="countdown-section">
+    <section class="py-12 bg-vermelho-vibrante text-white text-center" id="countdown-section"> <!-- Classe circus-stripe-bg removida -->
         <h3 class="text-4xl font-fredoka-one mb-8 text-amarelo-solar drop-shadow-lg">Faltam...</h3>
         <div id="countdown" class="flex justify-center items-center flex-wrap">
             <div class="countdown-digit">
@@ -203,26 +193,26 @@
     <!-- Seção de Detalhes do Evento -->
     <section id="detalhes" class="py-16 px-4 bg-white">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg"> <!-- Título alterado para amarelo solar -->
                 Save the Date!
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="bg-azul-claro p-8 rounded-xl shadow-lg text-white border-b-4 border-amarelo-solar"> <!-- Todos os textos nesta div agora são 'text-white' para melhor contraste -->
+                <div class="bg-vermelho-vibrante p-8 rounded-xl shadow-lg text-white border-b-4 border-amarelo-solar"> <!-- Alterado para vermelho vibrante -->
                     <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando será o espetáculo?</h4>
                     <p class="text-lg font-poppins mb-4">
-                        <span class="font-bold text-vermelho-vibrante">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
+                        <span class="font-bold text-amarelo-solar">Data:</span> <span id="event-date">XX de Mês de XXXX</span> <!-- Alterado para amarelo solar -->
                     </p>
                     <p class="text-lg font-poppins mb-4">
-                        <span class="font-bold text-vermelho-vibrante">Horário:</span> <span id="event-time">XXhXX</span>
+                        <span class="font-bold text-amarelo-solar">Horário:</span> <span id="event-time">XXhXX</span> <!-- Alterado para amarelo solar -->
                     </p>
                     <p class="text-lg font-poppins mb-6">
-                        <span class="font-bold text-vermelho-vibrante">Local:</span> Em breve!
+                        <span class="font-bold text-amarelo-solar">Local:</span> Em breve! <!-- Alterado para amarelo solar -->
                     </p>
                     <p class="text-md font-poppins text-white">
                         O local da festa será anunciado em breve. Fique de olho!
                     </p>
                 </div>
-                <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-amarelo-solar">
+                <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-vermelho-vibrante"> <!-- Borda alterada para vermelho vibrante -->
                     <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -235,13 +225,13 @@
     </section>
 
     <!-- Seção de Confirmação de Presença (RSVP) -->
-    <section id="presenca" class="py-16 px-4 bg-amarelo-solar text-gray-800">
+    <section id="presenca" class="py-16 px-4 bg-vermelho-vibrante text-gray-800"> <!-- Alterado para vermelho vibrante -->
         <div class="container mx-auto">
-            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg"> <!-- Título alterado para amarelo solar -->
                 Confirme Sua Presença!
             </h3>
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
-                <p class="text-center mb-6 font-poppins text-lg">
+                <p class="text-center mb-6 font-poppins text-lg text-gray-700">
                     <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
                     Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
                 </p>
@@ -281,16 +271,16 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- POR FAVOR, SUBSTITUA ESTAS IMAGENS PELAS FOTOS REAIS DA AURORA -->
                 <!-- Exemplo: <img src="URL_DA_FOTO_1.jpg" alt="Foto da Aurora 1" class="w-full h-48 object-cover"> -->
-                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300"> <!-- Borda alterada para vermelho vibrante -->
                     <img src="https://placehold.co/400x300/A2D2FF/E63946?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300"> <!-- Borda alterada para vermelho vibrante -->
                     <img src="https://placehold.co/400x300/FFD166/E63946?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300"> <!-- Borda alterada para vermelho vibrante -->
                     <img src="https://placehold.co/400x300/E63946/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300"> <!-- Borda alterada para vermelho vibrante -->
                     <img src="https://placehold.co/400x300/FFFFFF/A2D2FF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
                 </div>
             </div>
@@ -298,13 +288,13 @@
     </section>
 
     <!-- Seção de Recado para Aurora -->
-    <section id="recado" class="py-16 px-4 bg-azul-claro text-gray-800">
+    <section id="recado" class="py-16 px-4 bg-vermelho-vibrante text-gray-800"> <!-- Alterado para vermelho vibrante -->
         <div class="container mx-auto">
-            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg"> <!-- Título alterado para amarelo solar -->
                 Deixe um Recadinho para Aurora!
             </h3>
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-amarelo-solar">
-                <p class="text-center mb-6 font-poppins text-lg">
+                <p class="text-center mb-6 font-poppins text-lg text-gray-700">
                     Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
                 </p>
                 <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULÁRIO DE MENSAGENS DO FORMSPREE -->
@@ -367,8 +357,8 @@
                 document.getElementById('countdown').innerHTML = ''; // Limpa os dígitos
                 document.getElementById('event-message').classList.remove('hidden'); // Mostra a mensagem
                 document.getElementById('event-message').innerText = 'A festa começou! 🎉';
-                document.getElementById('countdown-section').classList.remove('circus-stripe-bg');
-                document.getElementById('countdown-section').classList.add('bg-azul-claro');
+                document.getElementById('countdown-section').classList.remove('bg-vermelho-vibrante'); // Remove a cor vibrante
+                document.getElementById('countdown-section').classList.add('bg-azul-claro'); // Adiciona uma cor alternativa (ex: azul claro)
             }
         }, 1000);
 

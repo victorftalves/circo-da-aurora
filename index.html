@@ -37,14 +37,9 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--color-branco); /* Fundo branco base */
             overflow-x: hidden; /* Evita rolagem horizontal */
-            opacity: 0; /* Começa invisível para a animação de entrada */
-            animation: fadeIn 1s forwards; /* Animação de entrada */
         }
-        /* Animação de entrada */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        /* Efeitos visuais de circo */
+        /* REMOVIDO: .circus-stripe-bg */
 
         .countdown-digit {
             @apply bg-white text-gray-800 text-5xl font-extrabold p-6 rounded-xl shadow-lg m-2;
@@ -142,6 +137,7 @@
         <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-solar animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
         <svg class="absolute bottom-20 right-20 w-8 h-8 text-white animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
 
+        <!-- CONTAINER DO CONTEÚDO PRINCIPAL (TÍTULO, TEXTOS, IMAGEM) - Adicionado flexbox para centralização -->
         <div class="relative z-10 container mx-auto text-white flex flex-col items-center">
             <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
                 É O ANIVERSÁRIO DA AURORA!
@@ -258,10 +254,11 @@
             </h3>
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
                 <p class="text-center mb-6 font-poppins text-lg text-gray-700">
+                    <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
                     Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
                 </p>
-                <!-- O Formspree enviará as informações para o e-mail configurado. -->
                 <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
+                <!-- Acesse formspree.io, crie um formulário e copie o ID fornecido -->
                 <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
                     <div>
                         <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
@@ -272,15 +269,14 @@
                         <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <div>
-                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
-                        <!-- Adicionado 'max="3"' para limitar o número de acompanhantes no HTML -->
-                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (incluindo crianças):</label>
+                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         Confirmar Presença
                     </button>
                 </form>
-                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante"></div>
+                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
             </div>
         </div>
     </section>
@@ -359,7 +355,6 @@
     <script>
         // Data e hora do evento: 11/04/2026 às 15:30h
         const eventDate = new Date('2026-04-11T15:30:00').getTime();
-        const phoneNumber = '5591982078165'; // Número de telefone para o WhatsApp, incluindo código do país e DDD
 
         // Atualiza a contagem regressiva a cada segundo
         const countdownInterval = setInterval(() => {
@@ -394,20 +389,9 @@
             event.preventDefault(); // Evita o recarregamento da página
 
             const rsvpStatusMessage = document.getElementById('rsvp-status-message');
-            rsvpStatusMessage.innerHTML = ''; // Limpa mensagens anteriores
             rsvpStatusMessage.classList.remove('hidden'); // Exibe a mensagem
             rsvpStatusMessage.innerText = 'Enviando...';
             rsvpStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
-
-            const nome = document.getElementById('nome').value;
-            const acompanhantes = parseInt(document.getElementById('acompanhantes').value);
-
-            // Validação adicional para o limite de acompanhantes
-            if (acompanhantes > 3) {
-                rsvpStatusMessage.innerText = 'Máximo de 3 acompanhantes permitidos.';
-                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
-                return; // Impede o envio do formulário
-            }
 
             const form = event.target;
             const data = new FormData(form);
@@ -420,40 +404,19 @@
             });
 
             if (response.ok) {
-                let message = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada por e-mail.`;
-                rsvpStatusMessage.innerText = message;
+                rsvpStatusMessage.innerText = 'Obrigado! Sua presença foi confirmada.';
                 rsvpStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
                 form.reset(); // Limpa o formulário
-
-                // Mensagem e link WhatsApp (opcional)
-                const whatsappMessage = encodeURIComponent(
-                    `Olá! Gostaria de confirmar minha presença (${nome}, ${acompanhantes} acompanhante(s)) na festa da Aurora. E-mail: ${document.getElementById('email').value}`
-                );
-                const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-
-                const whatsappBtn = document.createElement('a');
-                whatsappBtn.href = whatsappLink;
-                whatsappBtn.target = '_blank';
-                whatsappBtn.className = 'mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md';
-                whatsappBtn.innerHTML = 'Enviar Confirmação por WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="inline-block h-5 w-5 ml-2">';
-                
-                // Adiciona o botão WhatsApp após a mensagem de sucesso
-                rsvpStatusMessage.appendChild(document.createElement('br'));
-                rsvpStatusMessage.appendChild(document.createElement('br'));
-                rsvpStatusMessage.appendChild(whatsappBtn);
-
             } else {
                 const errorData = await response.json();
                 rsvpStatusMessage.innerText = `Erro ao confirmar presença: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
                 rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
             }
 
-            // Esconde a mensagem após alguns segundos (apenas se não houver botão WhatsApp)
-            if (!rsvpStatusMessage.querySelector('a')) {
-                setTimeout(() => {
-                    rsvpStatusMessage.classList.add('hidden');
-                }, 5000);
-            }
+            // Esconde a mensagem após alguns segundos
+            setTimeout(() => {
+                rsvpStatusMessage.classList.add('hidden');
+            }, 5000);
         });
 
         // Formulário de Recado para Aurora

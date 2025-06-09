@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   O Circo da Aurora - 1 Ano
-  </title>
-  <!-- Google Fonts: Fredoka One para títulos e Poppins para texto corrido -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-  <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <style>
-   /* Cores personalizadas do Tailwind CSS */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Circo da Aurora - 1 Ano</title>
+    <!-- Google Fonts: Fredoka One para títulos e Poppins para texto corrido -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cores personalizadas do Tailwind CSS */
         :root {
             --color-vermelho-vibrante: #E63946;
             --color-azul-claro: #A2D2FF;
@@ -40,9 +37,15 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--color-branco); /* Fundo branco base */
             overflow-x: hidden; /* Evita rolagem horizontal */
+            /* ANIMAÇÃO DE ENTRADA: Adicionado para um efeito suave ao carregar */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
-        /* Efeitos visuais de circo */
-        /* REMOVIDO: .circus-stripe-bg */
+        /* Definição da animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
         .countdown-digit {
             @apply bg-white text-gray-800 text-5xl font-extrabold p-6 rounded-xl shadow-lg m-2;
@@ -103,365 +106,263 @@
         .confetti:nth-child(3n) { background-color: var(--color-azul-claro); animation-delay: 2s; }
         .confetti:nth-child(4n) { background-color: var(--color-branco); animation-delay: 0.5s; }
         .confetti:nth-child(5n) { background-color: var(--color-amarelo-solar); animation-delay: 2.5s; }
-  </style>
- </head>
- <body class="flex flex-col min-h-screen">
-  <!-- Cabeçalho - Tema Circo -->
-  <header class="bg-vermelho-vibrante text-white p-4 shadow-xl font-fredoka-one">
-   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-amarelo-solar drop-shadow-lg flex items-center">
-     O Circo da Aurora!
-     <!-- Ícone de balão SVG para estética de circo -->
-     <svg class="w-8 h-8 ml-3 text-amarelo-solar animate-float" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z" fill-rule="evenodd">
-      </path>
-      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z">
-      </path>
-     </svg>
-    </h1>
-    <nav>
-     <ul class="flex flex-wrap justify-center md:space-x-6 text-lg">
-      <li>
-       <a class="hover:text-amarelo-solar transition duration-300 rounded-md p-2" href="#inicio">
-        Início
-       </a>
-      </li>
-      <li>
-       <a class="hover:text-amarelo-solar transition duration-300 rounded-md p-2" href="#detalhes">
-        Detalhes
-       </a>
-      </li>
-      <li>
-       <a class="hover:text-amarelo-solar transition duration-300 rounded-md p-2" href="#presenca">
-        Confirme
-       </a>
-      </li>
-      <li>
-       <a class="hover:text-amarelo-solar transition duration-300 rounded-md p-2" href="#fotos">
-        Fotos
-       </a>
-      </li>
-      <li>
-       <a class="hover:text-amarelo-solar transition duration-300 rounded-md p-2" href="#recado">
-        Recado
-       </a>
-      </li>
-     </ul>
-    </nav>
-   </div>
-  </header>
-  <!-- Seção de Boas-Vindas / Hero -->
-  <section class="relative bg-vermelho-vibrante text-center py-20 px-4 overflow-hidden" id="inicio">
-   <!-- Alterado para vermelho vibrante -->
-   <div class="absolute inset-0 z-0 opacity-40">
-    <!-- Opacidade da imagem de fundo ajustada para melhorar a visibilidade do texto -->
-    <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA ARTE PRINCIPAL DO SEU TEMA DE CIRCO -->
-    <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
-    <img alt="Estrelas coloridas" src="STAR.png" width="300"/>
-   </div>
-   <!-- Estrelas decorativas -->
-   <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-solar animate-twinkle z-10" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z">
-    </path>
-   </svg>
-   <svg class="absolute bottom-20 right-20 w-8 h-8 text-white animate-twinkle z-10" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z">
-    </path>
-   </svg>
-   <div class="relative z-10 container mx-auto text-white">
-    <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
-     É O ANIVERSÁRIO DA AURORA!
-    </h2>
-    <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-lg text-white">
-     Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
-    </p>
-    <!-- IMAGEM PRINCIPAL DO CIRCO DA AURORA (LOGO) -->
-    <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DA IMAGEM ********************** -->
-    <!-- Para que esta imagem carregue no seu site publicado (GitHub Pages), você DEVE: -->
-    <!-- 1. Fazer o UPLOAD do arquivo 'O Circo da Aurora Mágico (1).jpg' para o seu repositório GitHub. -->
-    <!-- 2. Alterar o 'src' abaixo para o CAMINHO RELATIVO do arquivo no seu repositório. -->
-    <!--    Exemplos: -->
-    <!--    Se 'O Circo da Aurora Mágico (1).jpg' estiver na MESMA PASTA do seu index.html: -->
-    <!--    <img src="O Circo da Aurora Mágico (1).jpg" -->
-    <!--    Se 'O Circo da Aurora Mágico (1).jpg' estiver dentro de uma PASTA 'images' no seu repositório: -->
-    <!--    <img src="images/O Circo da Aurora Mágico (1).jpg" -->
-    <!-- ***************************************************************************************** -->
-    <section id="convite" style="text-align: center; padding: 40px 20px;">
-     <img alt="Convite de Aniversário da Aurora" src="./O Circo da Aurora Mágico.png" style="max-width: 90%; height: auto;"/>
-     <p style="margin-top: 20px; font-size: 1.2rem; color: white;">
-      <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-lg text-white">
-       <!-- POR FAVOR, EDITE ESTA MENSAGEM DE BOAS-VINDAS DOS PAIS -->
-       Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
-      </p>
-     </p>
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Cabeçalho - Tema Circo -->
+    <header class="bg-vermelho-vibrante text-white p-4 shadow-xl font-fredoka-one">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-amarelo-solar drop-shadow-lg flex items-center">
+                O Circo da Aurora!
+                <!-- Ícone de balão SVG para estética de circo -->
+                <svg class="w-8 h-8 ml-3 text-amarelo-solar animate-float" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z" clip-rule="evenodd"></path>
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                </svg>
+            </h1>
+            <nav>
+                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg">
+                    <li><a href="#inicio" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Início</a></li>
+                    <li><a href="#detalhes" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Detalhes</a></li>
+                    <li><a href="#presenca" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Confirme</a></li>
+                    <li><a href="#fotos" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Fotos</a></li>
+                    <li><a href="#recado" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Recado</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de Boas-Vindas / Hero -->
+    <section id="inicio" class="relative bg-vermelho-vibrante text-center py-20 px-4 overflow-hidden"> <!-- Alterado para vermelho vibrante -->
+        <div class="absolute inset-0 z-0 opacity-40"> <!-- Opacidade da imagem de fundo ajustada para melhorar a visibilidade do texto -->
+            <!-- IMAGEM DE FUNDO DA SEÇÃO INICIAL -->
+            <!-- ********************** IMPORTANTE PARA O CARREGAMENTO ********************** -->
+            <!-- Se você tiver uma imagem de fundo (como "STAR.png" que foi mencionado), -->
+            <!-- ela DEVE estar no seu repositório GitHub e o 'src' abaixo deve ser o caminho relativo. -->
+            <!-- Se não tiver, pode deixar o 'placehold.co' ou remover esta tag <img>. -->
+            <!-- Exemplo: <img src="./STAR.png" alt="Estrelas coloridas de fundo" class="w-full h-full object-cover"> -->
+            <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+de+Fundo+do+Circo" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
+        </div>
+        <!-- Estrelas decorativas -->
+        <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-solar animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-20 right-20 w-8 h-8 text-white animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+
+        <div class="relative z-10 container mx-auto text-white flex flex-col items-center">
+            <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
+                É O ANIVERSÁRIO DA AURORA!
+            </h2>
+            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-lg text-white">
+                Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
+            </p>
+            <!-- IMAGEM PRINCIPAL DO CIRCO DA AURORA (LOGO/PERFIL) -->
+            <!-- ********************** INSTRUÇÕES CRÍTICAS PARA O CARREGAMENTO DA IMAGEM ********************** -->
+            <!-- Para que esta imagem carregue no seu site publicado (GitHub Pages), você DEVE: -->
+            <!-- 1. Fazer o UPLOAD do arquivo de imagem para o seu repositório GitHub. -->
+            <!--    O nome do arquivo que você me enviou foi 'O Circo da Aurora Mágico (1).jpg'. -->
+            <!--    Se este for o arquivo que você quer usar como logo/perfil, ele DEVE estar no seu repositório. -->
+            <!-- 2. Alterar o 'src' abaixo para o CAMINHO RELATIVO do arquivo no seu repositório. -->
+            <!--    Exemplos: -->
+            <!--    - Se 'O Circo da Aurora Mágico (1).jpg' estiver na MESMA PASTA do seu index.html: -->
+            <!--      <img src="./O Circo da Aurora Mágico (1).jpg" -->
+            <!--    - Se estiver dentro de uma pasta 'images' no seu repositório: -->
+            <!--      <img src="./images/O Circo da Aurora Mágico (1).jpg" -->
+            <!-- O 'onerror' é um fallback caso a imagem não carregue. Substitua o 'src' principal. -->
+            <!-- ***************************************************************************************** -->
+            <div class="flex flex-col items-center justify-center mt-10">
+                <img src="./O Circo da Aurora Mágico (1).jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/FFD166/E63946?text=LOGO+CIRCO+AURORA';" alt="Logo O Circo da Aurora" class="max-w-[90%] h-auto drop-shadow-xl border-4 border-amarelo-solar rounded-full">
+            </div>
+
+            <p class="text-lg md:text-xl font-poppins mt-8 max-w-xl mx-auto drop-shadow-lg text-white">
+                <!-- POR FAVOR, EDITE ESTA MENSAGEM DE BOAS-VINDAS DOS PAIS -->
+                Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
+            </p>
+        </div>
+        <!-- ELEMENTOS DECORATIVOS (PALHAÇO E ELEFANTA) -->
+        <!-- ********************** INSTRUÇÕES CRÍTICAS PARA O CARREGAMENTO DOS GIFS/IMAGENS ********************** -->
+        <!-- Assim como a imagem principal, estes arquivos (PALHAÇO.png, ELEFANTA.png) DEVERÃO estar no seu repositório GitHub. -->
+        <!-- Se você colocá-los em uma subpasta (ex: 'assets/'), lembre-se de atualizar o 'src' (ex: './assets/PALHAÇO.png'). -->
+        <!-- O 'onerror' é um fallback caso a imagem não carregue. Substitua o 'src' principal. -->
+        <!-- ****************************************************************************************************** -->
+        <!-- Palhaço no canto inferior direito da seção -->
+        <div class="absolute bottom-0 right-0 hidden md:block animate-bounce z-0 pointer-events-none">
+            <img src="./PALHAÇO.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A2D2FF/E63946?text=Palhaço';" alt="Palhaço decorativo" class="w-24 md:w-28 drop-shadow-xl" />
+        </div>
+        <!-- Elefanta no canto superior esquerdo -->
+        <div class="absolute top-0 left-0 hidden md:block animate-bounce delay-200 z-0 pointer-events-none">
+            <img src="./ELEFANTA.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A2D2FF/E63946?text=Elefanta';" alt="Elefanta decorativa" class="w-24 md:w-28 drop-shadow-xl" />
+        </div>
     </section>
-   </div>
-   <!-- GIF de palhaço na seção principal (canto inferior esquerdo) -->
-   <div class="absolute bottom-5 left-5 md:left-10 z-20 w-24 h-24">
-    <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
-    <!-- Gifs de links externos (como Giphy) podem não carregar em alguns ambientes (ex: GitHub Pages) devido a políticas de segurança (CORS). -->
-    <!-- PARA GARANTIR QUE OS GIFS APAREÇAM: -->
-    <!-- 1. Baixe os GIFs para o seu computador. -->
-    <!-- 2. Faça o UPLOAD dos arquivos GIF para o seu repositório GitHub (na mesma pasta ou em uma pasta 'gifs/', por exemplo). -->
-    <!-- 3. Substitua o 'src' abaixo pelo CAMINHO RELATIVO do GIF no seu repositório. -->
-    <!--    Exemplos: -->
-    <!--    <img src="palhaco1.gif" -->
-    <!--    ou se estiver em uma pasta 'gifs': -->
-    <!--    <img src="gifs/palhaco1.gif" -->
-    <!-- ***************************************************************************************** -->
-    <img alt="Elefanta do circo" src="ELEFANTA.png" width="300"/>
-   </div>
-   <!-- GIF de palhaço na seção principal (canto superior direito) -->
-   <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
-    <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
-    <!-- Siga as mesmas instruções acima para o carregamento deste GIF. -->
-    <!-- ***************************************************************************************** -->
-    <img alt="Rosto de palhaço" src="PALHAÇO.png" width="300"/>
-   </div>
-   <div class="absolute top-10 left-5 hidden md:block animate-bounce">
-    <img alt="Elefanta do Circo" class="w-32 drop-shadow-xl" src="./ELEFANTA.png"/>
-   </div>
-   <div class="absolute bottom-10 right-5 hidden md:block animate-bounce delay-200">
-    <img alt="Palhaço do Circo" class="w-32 drop-shadow-xl" src="./PALHAÇO.png"/>
-   </div>
-   <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 hidden md:block animate-bounce delay-500">
-    <img alt="Elefanta Central" class="w-28 drop-shadow-xl" src="./ELEFANTA.png"/>
-   </div>
-   <div class="absolute top-5 right-10 hidden md:block animate-bounce delay-300">
-    <img alt="Palhaço do Topo" class="w-28 drop-shadow-xl" src="./PALHAÇO.png"/>
-   </div>
-  </section>
-  <!-- Seção de Contagem Regressiva -->
-  <section class="py-12 bg-vermelho-vibrante text-white text-center" id="countdown-section">
-   <!-- Classe circus-stripe-bg removida -->
-   <h3 class="text-4xl font-fredoka-one mb-8 text-amarelo-solar drop-shadow-lg">
-    Faltam...
-   </h3>
-   <div class="flex justify-center items-center flex-wrap" id="countdown">
-    <div class="countdown-digit">
-     <span id="days">
-      00
-     </span>
-     <div class="text-base mt-2 font-poppins">
-      Dias
-     </div>
-    </div>
-    <div class="countdown-digit">
-     <span id="hours">
-      00
-     </span>
-     <div class="text-base mt-2 font-poppins">
-      Horas
-     </div>
-    </div>
-    <div class="countdown-digit">
-     <span id="minutes">
-      00
-     </span>
-     <div class="text-base mt-2 font-poppins">
-      Minutos
-     </div>
-    </div>
-    <div class="countdown-digit">
-     <span id="seconds">
-      00
-     </span>
-     <div class="text-base mt-2 font-poppins">
-      Segundos
-     </div>
-    </div>
-   </div>
-   <p class="text-2xl font-poppins mt-8 text-white drop-shadow-md hidden" id="event-message">
-    A festa começou! 🎉
-   </p>
-  </section>
-  <!-- Seção de Detalhes do Evento -->
-  <section class="py-16 px-4 bg-white" id="detalhes">
-   <div class="container mx-auto">
-    <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
-     <!-- Título alterado para amarelo solar -->
-     Save the Date!
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-     <div class="bg-vermelho-vibrante p-8 rounded-xl shadow-lg text-white border-b-4 border-amarelo-solar">
-      <!-- Alterado para vermelho vibrante -->
-      <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">
-       Quando será o espetáculo?
-      </h4>
-      <p class="text-lg font-poppins mb-4">
-       <span class="font-bold text-amarelo-solar">
-        Data:
-       </span>
-       <span id="event-date">
-        XX de Mês de XXXX
-       </span>
-       <!-- Alterado para amarelo solar -->
-      </p>
-      <p class="text-lg font-poppins mb-4">
-       <span class="font-bold text-amarelo-solar">
-        Horário:
-       </span>
-       <span id="event-time">
-        XXhXX
-       </span>
-       <!-- Alterado para amarelo solar -->
-      </p>
-      <p class="text-lg font-poppins mb-6">
-       <span class="font-bold text-amarelo-solar">
-        Local:
-       </span>
-       Em breve!
-       <!-- Alterado para amarelo solar -->
-      </p>
-      <p class="text-md font-poppins text-white">
-       O local da festa será anunciado em breve. Fique de olho!
-      </p>
-     </div>
-     <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-vermelho-vibrante">
-      <!-- Borda alterada para vermelho vibrante -->
-      <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
-      <iframe allowfullscreen="" height="400" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr" style="border:0;" width="100%">
-      </iframe>
-      <p class="text-center text-sm font-poppins text-gray-600 mt-2">
-       O mapa do local estará disponível em breve!
-      </p>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Seção de Confirmação de Presença (RSVP) -->
-  <section class="py-16 px-4 bg-vermelho-vibrante text-gray-800" id="presenca">
-   <!-- Alterado para vermelho vibrante -->
-   <div class="container mx-auto">
-    <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
-     <!-- Título alterado para amarelo solar -->
-     Confirme Sua Presença!
-    </h3>
-    <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
-     <p class="text-center mb-6 font-poppins text-lg text-gray-700">
-      <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
-      Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
-     </p>
-     <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
-     <!-- Acesse formspree.io, crie um formulário e copie o ID fornecido -->
-     <form action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-4" id="rsvp-form" method="POST">
-      <div>
-       <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
-        Seu Nome Completo:
-       </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="nome" name="Nome" required="" type="text"/>
-      </div>
-      <div>
-       <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-        Seu E-mail:
-       </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="email" name="Email" required="" type="email"/>
-      </div>
-      <div>
-       <label class="block text-gray-700 text-sm font-bold mb-2" for="acompanhantes">
-        Número de Acompanhantes (incluindo crianças):
-       </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="acompanhantes" min="0" name="Acompanhantes" required="" type="number" value="0"/>
-      </div>
-      <button class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md" type="submit">
-       Confirmar Presença
-      </button>
-     </form>
-     <div class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden" id="rsvp-status-message">
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Seção da Galeria de Fotos -->
-  <section class="py-16 px-4 bg-white" id="fotos">
-   <div class="container mx-auto">
-    <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
-     Galeria de Momentos
-    </h3>
-    <p class="text-center text-lg font-poppins mb-8 text-gray-700">
-     Uma prévia da alegria! Em breve, mais fotos da Aurora para vocês.
-    </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-     <!-- POR FAVOR, SUBSTITUA ESTAS IMAGENS PELAS FOTOS REAIS DA AURORA -->
-     <!-- Exemplo: <img src="URL_DA_FOTO_1.jpg" alt="Foto da Aurora 1" class="w-full h-48 object-cover"> -->
-     <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
-      <!-- Borda alterada para vermelho vibrante -->
-      <img alt="Foto da Aurora 1" class="w-full h-48 object-cover" src="https://placehold.co/400x300/A2D2FF/E63946?text=Foto+Aurora+1"/>
-     </div>
-     <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
-      <!-- Borda alterada para vermelho vibrante -->
-      <img alt="Foto da Aurora 2" class="w-full h-48 object-cover" src="https://placehold.co/400x300/FFD166/E63946?text=Foto+Aurora+2"/>
-     </div>
-     <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
-      <!-- Borda alterada para vermelho vibrante -->
-      <img alt="Foto da Aurora 3" class="w-full h-48 object-cover" src="https://placehold.co/400x300/E63946/FFFFFF?text=Foto+Aurora+3"/>
-     </div>
-     <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
-      <!-- Borda alterada para vermelho vibrante -->
-      <img alt="Foto da Aurora 4" class="w-full h-48 object-cover" src="https://placehold.co/400x300/FFFFFF/A2D2FF?text=Foto+Aurora+4"/>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Seção de Recado para Aurora -->
-  <section class="py-16 px-4 bg-vermelho-vibrante text-gray-800" id="recado">
-   <!-- Alterado para vermelho vibrante -->
-   <div class="container mx-auto">
-    <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
-     <!-- Título alterado para amarelo solar -->
-     Deixe um Recadinho para Aurora!
-    </h3>
-    <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-amarelo-solar">
-     <p class="text-center mb-6 font-poppins text-lg text-gray-700">
-      Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
-     </p>
-     <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULÁRIO DE MENSAGENS DO FORMSPREE -->
-     <!-- Acesse formspree.io, crie um segundo formulário e copie o ID fornecido -->
-     <form action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" class="space-y-4" id="message-form" method="POST">
-      <div>
-       <label class="block text-gray-700 text-sm font-bold mb-2" for="remetente">
-        Seu Nome (Opcional):
-       </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent" id="remetente" name="Remetente" type="text"/>
-      </div>
-      <div>
-       <label class="block text-gray-700 text-sm font-bold mb-2" for="mensagem">
-        Sua Mensagem:
-       </label>
-       <textarea class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent" id="mensagem" name="Mensagem" required="" rows="6"></textarea>
-      </div>
-      <button class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md" type="submit">
-       Enviar Recado
-      </button>
-     </form>
-     <div class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden" id="message-status-message">
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Rodapé -->
-  <footer class="bg-gray-800 text-white p-6 mt-12 rounded-t-lg shadow-inner font-poppins">
-   <div class="container mx-auto text-center text-sm">
-    <p class="mb-4">
-     © 2025 O Circo da Aurora. Feito com amor.
-    </p>
-    <div class="flex justify-center space-x-6">
-     <!-- Links reais das redes sociais dos pais e contato -->
-     <a class="text-gray-400 hover:text-white transition duration-300" href="https://www.instagram.com/ovictormarketing" target="_blank">
-      Instagram do Papai
-     </a>
-     <a class="text-gray-400 hover:text-white transition duration-300" href="https://www.instagram.com/acarlaferreira_" target="_blank">
-      Instagram da Mamãe
-     </a>
-     <a class="text-gray-400 hover:text-white transition duration-300" href="tel:+5591982078165">
-      Fale Conosco (91 98207-8165)
-     </a>
-    </div>
-   </div>
-  </footer>
-  <script>
-   // Data e hora do evento: 11/04/2026 às 15:30h
+
+    <!-- Seção de Contagem Regressiva -->
+    <section class="py-12 bg-vermelho-vibrante text-white text-center" id="countdown-section">
+        <h3 class="text-4xl font-fredoka-one mb-8 text-amarelo-solar drop-shadow-lg">Faltam...</h3>
+        <div id="countdown" class="flex justify-center items-center flex-wrap">
+            <div class="countdown-digit">
+                <span id="days">00</span>
+                <div class="text-base mt-2 font-poppins">Dias</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="hours">00</span>
+                <div class="text-base mt-2 font-poppins">Horas</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="minutes">00</span>
+                <div class="text-base mt-2 font-poppins">Minutos</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="seconds">00</span>
+                <div class="text-base mt-2 font-poppins">Segundos</div>
+            </div>
+        </div>
+        <p id="event-message" class="text-2xl font-poppins mt-8 text-white drop-shadow-md hidden">
+            A festa começou! 🎉
+        </p>
+    </section>
+
+    <!-- Seção de Detalhes do Evento -->
+    <section id="detalhes" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
+                Save the Date!
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="bg-vermelho-vibrante p-8 rounded-xl shadow-lg text-white border-b-4 border-amarelo-solar">
+                    <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando será o espetáculo?</h4>
+                    <p class="text-lg font-poppins mb-4">
+                        <span class="font-bold text-amarelo-solar">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
+                    </p>
+                    <p class="text-lg font-poppins mb-4">
+                        <span class="font-bold text-amarelo-solar">Horário:</span> <span id="event-time">XXhXX</span>
+                    </p>
+                    <p class="text-lg font-poppins mb-6">
+                        <span class="font-bold text-amarelo-solar">Local:</span> Em breve!
+                    </p>
+                    <p class="text-md font-poppins text-white">
+                        O local da festa será anunciado em breve. Fique de olho!
+                    </p>
+                </div>
+                <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-vermelho-vibrante">
+                    <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <p class="text-center text-sm font-poppins text-gray-600 mt-2">
+                        O mapa do local estará disponível em breve!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Confirmação de Presença (RSVP) -->
+    <section id="presenca" class="py-16 px-4 bg-vermelho-vibrante text-gray-800">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
+                Confirme Sua Presença!
+            </h3>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
+                <p class="text-center mb-6 font-poppins text-lg text-gray-700">
+                    Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
+                </p>
+                <!-- O Formspree enviará as informações para o e-mail configurado. -->
+                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
+                <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                    <div>
+                        <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
+                        <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Seu E-mail:</label>
+                        <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
+                        <!-- Adicionado 'max="3"' para limitar o número de acompanhantes no HTML -->
+                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        Confirmar Presença
+                    </button>
+                </form>
+                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Galeria de Fotos -->
+    <section id="fotos" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+                Galeria de Momentos
+            </h3>
+            <p class="text-center text-lg font-poppins mb-8 text-gray-700">
+                Uma prévia da alegria! Em breve, mais fotos da Aurora para vocês.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- POR FAVOR, SUBSTITUA ESTAS IMAGENS PELAS FOTOS REAIS DA AURORA -->
+                <!-- Exemplo: <img src="./minha-foto-aurora-1.jpg" alt="Foto da Aurora 1" class="w-full h-48 object-cover"> -->
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/A2D2FF/E63946?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FFD166/E63946?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/E63946/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-vermelho-vibrante transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FFFFFF/A2D2FF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recado para Aurora -->
+    <section id="recado" class="py-16 px-4 bg-vermelho-vibrante text-gray-800">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
+                Deixe um Recadinho para Aurora!
+            </h3>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-amarelo-solar">
+                <p class="text-center mb-6 font-poppins text-lg text-gray-700">
+                    Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
+                </p>
+                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULÁRIO DE MENSAGENS DO FORMSPREE -->
+                <!-- Acesse formspree.io, crie um segundo formulário e copie o ID fornecido -->
+                <form id="message-form" action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" method="POST" class="space-y-4">
+                    <div>
+                        <label for="remetente" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome (Opcional):</label>
+                        <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        Enviar Recado
+                    </button>
+                </form>
+                <div id="message-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white p-6 mt-12 rounded-t-lg shadow-inner font-poppins">
+        <div class="container mx-auto text-center text-sm">
+            <p class="mb-4">&copy; 2025 O Circo da Aurora. Feito com amor.</p>
+            <div class="flex justify-center space-x-6">
+                <!-- Links reais das redes sociais dos pais e contato -->
+                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram do Papai</a>
+                <a href="https://www.instagram.com/acarlaferreira_" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
+                <a href="tel:+5591982078165" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco (91 98207-8165)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data e hora do evento: 11/04/2026 às 15:30h
         const eventDate = new Date('2026-04-11T15:30:00').getTime();
+        const phoneNumber = '5591982078165'; // Número de telefone para o WhatsApp, incluindo código do país e DDD
 
         // Atualiza a contagem regressiva a cada segundo
         const countdownInterval = setInterval(() => {
@@ -496,9 +397,20 @@
             event.preventDefault(); // Evita o recarregamento da página
 
             const rsvpStatusMessage = document.getElementById('rsvp-status-message');
+            rsvpStatusMessage.innerHTML = ''; // Limpa mensagens anteriores
             rsvpStatusMessage.classList.remove('hidden'); // Exibe a mensagem
             rsvpStatusMessage.innerText = 'Enviando...';
             rsvpStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
+
+            const nome = document.getElementById('nome').value;
+            const acompanhantes = parseInt(document.getElementById('acompanhantes').value);
+
+            // Validação adicional para o limite de acompanhantes
+            if (acompanhantes > 3) {
+                rsvpStatusMessage.innerText = 'Máximo de 3 acompanhantes permitidos.';
+                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+                return; // Impede o envio do formulário
+            }
 
             const form = event.target;
             const data = new FormData(form);
@@ -511,19 +423,40 @@
             });
 
             if (response.ok) {
-                rsvpStatusMessage.innerText = 'Obrigado! Sua presença foi confirmada.';
+                let message = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada por e-mail.`;
+                rsvpStatusMessage.innerText = message;
                 rsvpStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
                 form.reset(); // Limpa o formulário
+
+                // Mensagem e link WhatsApp (opcional)
+                const whatsappMessage = encodeURIComponent(
+                    `Olá! Gostaria de confirmar minha presença (${nome}, ${acompanhantes} acompanhante(s)) na festa da Aurora. E-mail: ${document.getElementById('email').value}`
+                );
+                const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+                const whatsappBtn = document.createElement('a');
+                whatsappBtn.href = whatsappLink;
+                whatsappBtn.target = '_blank';
+                whatsappBtn.className = 'mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md';
+                whatsappBtn.innerHTML = 'Enviar Confirmação por WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="inline-block h-5 w-5 ml-2">';
+                
+                // Adiciona o botão WhatsApp após a mensagem de sucesso
+                rsvpStatusMessage.appendChild(document.createElement('br'));
+                rsvpStatusMessage.appendChild(document.createElement('br'));
+                rsvpStatusMessage.appendChild(whatsappBtn);
+
             } else {
                 const errorData = await response.json();
                 rsvpStatusMessage.innerText = `Erro ao confirmar presença: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
                 rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
             }
 
-            // Esconde a mensagem após alguns segundos
-            setTimeout(() => {
-                rsvpStatusMessage.classList.add('hidden');
-            }, 5000);
+            // Esconde a mensagem após alguns segundos (apenas se não houver botão WhatsApp)
+            if (!rsvpStatusMessage.querySelector('a')) {
+                setTimeout(() => {
+                    rsvpStatusMessage.classList.add('hidden');
+                }, 5000);
+            }
         });
 
         // Formulário de Recado para Aurora
@@ -567,6 +500,25 @@
             document.getElementById('event-date').innerText = new Date(eventDate).toLocaleDateString('pt-BR', options);
             document.getElementById('event-time').innerText = new Date(eventDate).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
         });
-  </script>
- </body>
+    </script>
+</body>
 </html>
+```
+
+---
+
+**Para que o seu site volte a funcionar como você deseja e com as novas funcionalidades:**
+
+1.  **Copie TODO o código do bloco acima.**
+2.  **Vá para o seu repositório no GitHub.**
+3.  **Abra o arquivo `index.html` para edição.**
+4.  **APAGUE TODO o conteúdo atual do `index.html`** e **COLE TODO o código que acabei de gerar.**
+5.  **Faça o commit das alterações.**
+
+**MUITO IMPORTANTE: Verifique os caminhos das suas imagens e GIFs no GitHub:**
+
+* No seu repositório, se `O Circo da Aurora Mágico (1).jpg` está na mesma pasta do `index.html`, então o `src` `./O Circo da Aurora Mágico (1).jpg"` está correto.
+* Se seus GIFs (`PALHAÇO.png`, `ELEFANTA.png`) também estão na mesma pasta, o `src` `./PALHAÇO.png"` e `./ELEFANTA.png"` estarão corretos.
+* **Se eles estiverem em subpastas**, por exemplo, em uma pasta `assets/`, você precisará **ajustar os `src` manualmente** para `./assets/O Circo da Aurora Mágico (1).jpg`, `./assets/PALHAÇO.png`, `./assets/ELEFANTA.png`.
+
+Espero que esta versão corrija todos os problemas e traga seu site de volta ao que você esperava, com os adicionais que solicitou. Por favor, me diga imediatamente se ainda houver qualquer problema. Estou aqui para ajudar a garantir que o site da Aurora fique perfei

@@ -88,7 +88,8 @@
     <!-- Seção de Boas-Vindas / Hero -->
     <section id="inicio" class="relative bg-azul-claro text-center py-20 px-4 overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-30">
-            <!-- Placeholder para ilustração de circo. Substituir por ilustração real. -->
+            <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA ARTE PRINCIPAL DO SEU TEMA DE CIRCO -->
+            <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
             <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+do+Circo+da+Aurora" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10 container mx-auto text-white">
@@ -98,8 +99,11 @@
             <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-md">
                 Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
             </p>
+            <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA FOTO DA AURORA -->
+            <!-- Exemplo: <img src="URL_DA_FOTO_DA_AURORA.jpg" alt="Foto da Aurora" class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-amarelo-solar shadow-lg mb-8"> -->
             <img src="https://placehold.co/200x200/FFFFFF/E63946?text=Foto+Aurora" alt="Foto da Aurora" class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-amarelo-solar shadow-lg mb-8">
             <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-md">
+                <!-- POR FAVOR, EDITE ESTA MENSAGEM DE BOAS-VINDAS DOS PAIS -->
                 Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
             </p>
         </div>
@@ -135,11 +139,11 @@
     <section id="detalhes" class="py-16 px-4 bg-white">
         <div class="container mx-auto">
             <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
-                Detalhes do Espetáculo
+                Save the Date!
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div class="bg-azul-claro p-8 rounded-xl shadow-lg text-gray-800 border-b-4 border-amarelo-solar">
-                    <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando? Onde?</h4>
+                    <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando será o espetáculo?</h4>
                     <p class="text-lg font-poppins mb-4">
                         <span class="font-bold text-vermelho-vibrante">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
                     </p>
@@ -147,16 +151,19 @@
                         <span class="font-bold text-vermelho-vibrante">Horário:</span> <span id="event-time">XXhXX</span>
                     </p>
                     <p class="text-lg font-poppins mb-6">
-                        <span class="font-bold text-vermelho-vibrante">Local:</span> <span id="event-address">Nome do Salão de Festas, Rua Exemplo, 123 - Bairro, Cidade - UF</span>
+                        <span class="font-bold text-vermelho-vibrante">Local:</span> Em breve!
                     </p>
-                    <a href="#" target="_blank" class="bg-vermelho-vibrante text-white py-3 px-6 rounded-lg text-lg font-bold hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
-                        Ver no Mapa
-                    </a>
+                    <p class="text-md font-poppins text-white">
+                        O local da festa será anunciado em breve. Fique de olho!
+                    </p>
                 </div>
                 <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-amarelo-solar">
-                    <!-- Placeholder para Google Maps. Substituir por iframe real. -->
+                    <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <p class="text-center text-sm font-poppins text-gray-600 mt-2">
+                        O mapa do local estará disponível em breve!
+                    </p>
                 </div>
             </div>
         </div>
@@ -170,26 +177,29 @@
             </h3>
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
                 <p class="text-center mb-6 font-poppins text-lg">
-                    Para que possamos organizar tudo com carinho, por favor, confirme sua presença até o dia XX/XX.
+                    <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
+                    Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
                 </p>
-                <form id="rsvp-form" class="space-y-4">
+                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
+                <!-- Acesse formspree.io, crie um formulário e copie o ID fornecido -->
+                <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
                     <div>
                         <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                        <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <div>
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Seu E-mail:</label>
-                        <input type="email" id="email" name="email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                        <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <div>
                         <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (incluindo crianças):</label>
-                        <input type="number" id="acompanhantes" name="acompanhantes" min="0" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         Confirmar Presença
                     </button>
                 </form>
-                <div id="rsvp-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
             </div>
         </div>
     </section>
@@ -204,7 +214,8 @@
                 Uma prévia da alegria! Em breve, mais fotos da Aurora para vocês.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Fotos placeholder - Substituir por fotos reais da Aurora -->
+                <!-- POR FAVOR, SUBSTITUA ESTAS IMAGENS PELAS FOTOS REAIS DA AURORA -->
+                <!-- Exemplo: <img src="URL_DA_FOTO_1.jpg" alt="Foto da Aurora 1" class="w-full h-48 object-cover"> -->
                 <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
                     <img src="https://placehold.co/400x300/A2D2FF/E63946?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
                 </div>
@@ -231,20 +242,22 @@
                 <p class="text-center mb-6 font-poppins text-lg">
                     Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
                 </p>
-                <form id="message-form" class="space-y-4">
+                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULÁRIO DE MENSAGENS DO FORMSPREE -->
+                <!-- Acesse formspree.io, crie um segundo formulário e copie o ID fornecido -->
+                <form id="message-form" action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" method="POST" class="space-y-4">
                     <div>
                         <label for="remetente" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome (Opcional):</label>
-                        <input type="text" id="remetente" name="remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent">
+                        <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent">
                     </div>
                     <div>
                         <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Sua Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent"></textarea>
+                        <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent"></textarea>
                     </div>
                     <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         Enviar Recado
                     </button>
                 </form>
-                <div id="message-status" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+                <div id="message-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
             </div>
         </div>
     </section>
@@ -254,6 +267,7 @@
         <div class="container mx-auto text-center text-sm">
             <p class="mb-4">&copy; 2025 O Circo da Aurora. Feito com amor.</p>
             <div class="flex justify-center space-x-6">
+                <!-- POR FAVOR, SUBSTITUA '#' PELOS LINKS REAIS DAS REDES SOCIAIS DOS PAIS -->
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook do Papai</a>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco</a>
@@ -262,8 +276,8 @@
     </footer>
 
     <script>
-        // Data do evento (Ano, Mês-1, Dia, Hora, Minuto, Segundo)
-        const eventDate = new Date('2025-12-25T15:00:00').getTime(); // Exemplo: 25 de Dezembro de 2025, 15:00
+        // Data e hora do evento: 11/04/2026 às 15:30h
+        const eventDate = new Date('2026-04-11T15:30:00').getTime();
 
         // Atualiza a contagem regressiva a cada segundo
         const countdownInterval = setInterval(() => {
@@ -294,59 +308,76 @@
         }, 1000);
 
         // Formulário de RSVP
-        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+        document.getElementById('rsvp-form').addEventListener('submit', async function(event) {
             event.preventDefault(); // Evita o recarregamento da página
 
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const acompanhantes = document.getElementById('acompanhantes').value;
+            const rsvpStatusMessage = document.getElementById('rsvp-status-message');
+            rsvpStatusMessage.classList.remove('hidden'); // Exibe a mensagem
+            rsvpStatusMessage.innerText = 'Enviando...';
+            rsvpStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
 
-            const rsvpMessage = document.getElementById('rsvp-message');
-            rsvpMessage.classList.remove('hidden'); // Exibe a mensagem
+            const form = event.target;
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-            if (nome && email && acompanhantes !== '') {
-                // Aqui você pode integrar com um serviço de backend ou Firebase
-                // Por enquanto, apenas exibe uma mensagem de sucesso
-                console.log('RSVP Recebido:', { nome, email, acompanhantes });
-                rsvpMessage.innerText = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada.`;
-                this.reset(); // Limpa o formulário
+            if (response.ok) {
+                rsvpStatusMessage.innerText = 'Obrigado! Sua presença foi confirmada.';
+                rsvpStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
+                form.reset(); // Limpa o formulário
             } else {
-                rsvpMessage.innerText = 'Por favor, preencha todos os campos obrigatórios.';
-            }
-
-             // Esconde a mensagem após alguns segundos
-             setTimeout(() => {
-                rsvpMessage.classList.add('hidden');
-            }, 5000);
-        });
-
-        // Formulário de Recado para Aurora
-        document.getElementById('message-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o recarregamento da página
-
-            const remetente = document.getElementById('remetente').value;
-            const mensagem = document.getElementById('mensagem').value;
-
-            const messageStatus = document.getElementById('message-status');
-            messageStatus.classList.remove('hidden'); // Exibe a mensagem
-
-            if (mensagem) {
-                // Aqui você pode integrar com um serviço de backend ou Firebase
-                // Por enquanto, apenas exibe uma mensagem de sucesso
-                console.log('Mensagem para Aurora:', { remetente, mensagem });
-                messageStatus.innerText = `Seu recado foi enviado com sucesso, ${remetente || 'caro(a) convidado(a)'}!`;
-                this.reset(); // Limpa o formulário
-            } else {
-                messageStatus.innerText = 'Por favor, escreva sua mensagem.';
+                const errorData = await response.json();
+                rsvpStatusMessage.innerText = `Erro ao confirmar presença: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
+                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
             }
 
             // Esconde a mensagem após alguns segundos
             setTimeout(() => {
-                messageStatus.classList.add('hidden');
+                rsvpStatusMessage.classList.add('hidden');
             }, 5000);
         });
 
-        // Placeholder para data e hora do evento
+        // Formulário de Recado para Aurora
+        document.getElementById('message-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const messageStatusMessage = document.getElementById('message-status-message');
+            messageStatusMessage.classList.remove('hidden'); // Exibe a mensagem
+            messageStatusMessage.innerText = 'Enviando recado...';
+            messageStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
+
+            const form = event.target;
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                messageStatusMessage.innerText = 'Seu recado foi enviado com sucesso!';
+                messageStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
+                form.reset(); // Limpa o formulário
+            } else {
+                const errorData = await response.json();
+                messageStatusMessage.innerText = `Erro ao enviar recado: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
+                messageStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+            }
+
+            // Esconde a mensagem após alguns segundos
+            setTimeout(() => {
+                messageStatusMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Atualiza a exibição da data e hora do evento na seção de detalhes
         document.addEventListener('DOMContentLoaded', () => {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('event-date').innerText = new Date(eventDate).toLocaleDateString('pt-BR', options);

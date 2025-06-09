@@ -177,14 +177,27 @@
             <!--    ou se estiver em uma pasta 'gifs': -->
             <!--    <img src="gifs/palhaco1.gif" -->
             <!-- ***************************************************************************************** -->
-           <img src="ELEFANTA.png" alt="Elefanta do circo" width="300" />
-        </div>
-        <!-- GIF de palhaço na seção principal (canto superior direito) -->
-        <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
-            <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
-            <!-- Siga as mesmas instruções acima para o carregamento deste GIF. -->
-            <!-- ***************************************************************************************** -->
-            <img src="PALHAÇO.png" alt="Rosto de palhaço" width="300" />
+          <!-- ELEMENTOS DECORATIVOS -->
+
+  <!-- Elefanta à esquerda superior -->
+  <div class="absolute top-10 left-6 hidden md:block animate-bounce z-0">
+    <img src="./ELEFANTA.png" alt="Elefanta do Circo" class="w-32 drop-shadow-xl" />
+  </div>
+
+  <!-- Palhaço à direita inferior -->
+  <div class="absolute bottom-10 right-6 hidden md:block animate-bounce delay-200 z-0">
+    <img src="./PALHAÇO.png" alt="Palhaço do Circo" class="w-32 drop-shadow-xl" />
+  </div>
+
+  <!-- Elefanta inferior esquerda -->
+  <div class="absolute bottom-6 left-10 hidden md:block animate-bounce delay-400 z-0">
+    <img src="./ELEFANTA.png" alt="Elefanta do Rodapé" class="w-28 drop-shadow-xl" />
+  </div>
+
+  <!-- Palhaço superior direito -->
+  <div class="absolute top-6 right-10 hidden md:block animate-bounce delay-300 z-0">
+    <img src="./PALHAÇO.png" alt="Palhaço do Topo" class="w-28 drop-shadow-xl" />
+  </div>
     </section>
 
     <!-- Seção de Contagem Regressiva -->

@@ -58,6 +58,14 @@
             text-align: center;
         }
 
+        /* Corrigindo a visibilidade do texto "Dias", "Horas", etc. */
+        .countdown-digit > div {
+            color: var(--color-vermelho-vibrante); /* Cor vibrante para as legendas */
+            font-weight: 600; /* Mais negrito */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra para destacar */
+        }
+
+
         @media (max-width: 640px) {
             .countdown-digit {
                 @apply text-3xl p-4 m-1;
@@ -73,6 +81,35 @@
         .animate-float {
             animation: float 3s ease-in-out infinite;
         }
+
+        /* Animação para estrelas */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .animate-twinkle {
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        /* Animação para confete */
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(500px) rotateZ(720deg); opacity: 0; }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-amarelo-solar);
+            border-radius: 50%;
+            opacity: 0;
+            animation: confetti-fall 5s linear infinite;
+        }
+        .confetti:nth-child(2n) { background-color: var(--color-vermelho-vibrante); animation-delay: 1s; }
+        .confetti:nth-child(3n) { background-color: var(--color-azul-claro); animation-delay: 2s; }
+        .confetti:nth-child(4n) { background-color: var(--color-branco); animation-delay: 0.5s; }
+        .confetti:nth-child(5n) { background-color: var(--color-amarelo-solar); animation-delay: 2.5s; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -106,6 +143,10 @@
             <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
             <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+do+Circo+da+Aurora" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
         </div>
+        <!-- Estrelas decorativas -->
+        <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-solar animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-20 right-20 w-8 h-8 text-white animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+
         <div class="relative z-10 container mx-auto text-white">
             <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
                 É O ANIVERSÁRIO DA AURORA!
@@ -121,15 +162,15 @@
                 Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
             </p>
         </div>
-        <!-- Placeholder para GIF de palhaço na seção principal (canto inferior esquerdo) -->
+        <!-- GIF de palhaço na seção principal (canto inferior esquerdo) -->
         <div class="absolute bottom-5 left-5 md:left-10 z-20 w-24 h-24">
             <!-- POR FAVOR, SUBSTITUA O 'src' DESTA IMAGEM PELO URL REAL DO SEU GIF DE PALHAÇO -->
-            <img src="https://placehold.co/100x100/FFD166/E63946?text=GIF+Palhaço" alt="GIF de palhaço feliz" class="rounded-full shadow-lg border-2 border-amarelo-solar animate-float">
+            <img src="https://media.giphy.com/media/l4pM9S0yZ0V80s1a8/giphy.gif" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFD166/E63946?text=GIF+Palhaço';" alt="GIF de palhaço feliz" class="rounded-full shadow-lg border-2 border-amarelo-solar animate-float">
         </div>
-        <!-- Placeholder para GIF de palhaço na seção principal (canto superior direito) -->
+        <!-- GIF de palhaço na seção principal (canto superior direito) -->
         <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
             <!-- POR FAVOR, SUBSTITUA O 'src' DESTA IMAGEM PELO URL REAL DO SEU GIF DE PALHAÇO -->
-            <img src="https://placehold.co/100x100/A2D2FF/E63946?text=GIF+Palhaço" alt="GIF de palhaço brincando" class="rounded-full shadow-lg border-2 border-vermelho-vibrante animate-float">
+            <img src="https://media.giphy.com/media/2Fazr3qX9q0c6/giphy.gif" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A2D2FF/E63946?text=GIF+Palhaço';" alt="GIF de palhaço brincando" class="rounded-full shadow-lg border-2 border-vermelho-vibrante animate-float">
         </div>
     </section>
 
@@ -291,10 +332,10 @@
         <div class="container mx-auto text-center text-sm">
             <p class="mb-4">&copy; 2025 O Circo da Aurora. Feito com amor.</p>
             <div class="flex justify-center space-x-6">
-                <!-- POR FAVOR, SUBSTITUA '#' PELOS LINKS REAIS DAS REDES SOCIAIS DOS PAIS -->
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook do Papai</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco</a>
+                <!-- Links reais das redes sociais dos pais e contato -->
+                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram do Papai</a>
+                <a href="https://www.instagram.com/acarlaferreira" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
+                <a href="tel:+5591982078165" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco (91 98207-8165)</a>
             </div>
         </div>
     </footer>

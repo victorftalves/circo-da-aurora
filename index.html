@@ -37,9 +37,14 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--color-branco); /* Fundo branco base */
             overflow-x: hidden; /* Evita rolagem horizontal */
+            opacity: 0; /* Começa invisível para a animação de entrada */
+            animation: fadeIn 1s forwards; /* Animação de entrada */
         }
-        /* Efeitos visuais de circo */
-        /* REMOVIDO: .circus-stripe-bg */
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
         .countdown-digit {
             @apply bg-white text-gray-800 text-5xl font-extrabold p-6 rounded-xl shadow-lg m-2;
@@ -131,13 +136,13 @@
         <div class="absolute inset-0 z-0 opacity-40"> <!-- Opacidade da imagem de fundo ajustada para melhorar a visibilidade do texto -->
             <!-- POR FAVOR, SUBSTITUA ESTA IMAGEM PELA ARTE PRINCIPAL DO SEU TEMA DE CIRCO -->
             <!-- Exemplo: <img src="URL_DA_SUA_ARTE_DE_CIRCO.jpg" alt="Arte temática de circo" class="w-full h-full object-cover"> -->
-            <img src="STAR.png" alt="Estrelas coloridas" width="300" />
+            <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+de+Fundo+do+Circo" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
         </div>
         <!-- Estrelas decorativas -->
         <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-solar animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
         <svg class="absolute bottom-20 right-20 w-8 h-8 text-white animate-twinkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
 
-        <div class="relative z-10 container mx-auto text-white">
+        <div class="relative z-10 container mx-auto text-white flex flex-col items-center">
             <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
                 É O ANIVERSÁRIO DA AURORA!
             </h2>
@@ -155,10 +160,7 @@
             <!--    Se 'O Circo da Aurora Mágico (1).jpg' estiver dentro de uma PASTA 'images' no seu repositório: -->
             <!--    <img src="images/O Circo da Aurora Mágico (1).jpg" -->
             <!-- ***************************************************************************************** -->
-<div class="flex flex-col items-center justify-center mt-10">
-  <img src="./O Circo da Aurora Mágico.png" alt="Convite de Aniversário da Aurora"
-       class="max-w-[90%] h-auto mx-auto drop-shadow-xl" />
-
+            <img src="O Circo da Aurora Mágico (1).jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x200/FFD166/E63946?text=LOGO+CIRCO+AURORA';" alt="Logo O Circo da Aurora" class="rounded-full w-48 h-48 object-cover border-4 border-amarelo-solar shadow-lg mb-8">
             <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-lg text-white">
                 <!-- POR FAVOR, EDITE ESTA MENSAGEM DE BOAS-VINDAS DOS PAIS -->
                 Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
@@ -177,17 +179,15 @@
             <!--    ou se estiver em uma pasta 'gifs': -->
             <!--    <img src="gifs/palhaco1.gif" -->
             <!-- ***************************************************************************************** -->
-          <!-- ELEMENTOS DECORATIVOS -->
-
- <!-- Palhaço no canto inferior direito da seção -->
-<div class="absolute bottom-0 right-0 hidden md:block animate-bounce z-0 pointer-events-none">
-  <img src="./PALHAÇO.png" alt="Palhaço decorativo" class="w-24 md:w-28 drop-shadow-xl" />
-</div>
-<!-- Elefanta no canto superior esquerdo -->
-<div class="absolute top-0 left-0 hidden md:block animate-bounce delay-200 z-0 pointer-events-none">
-  <img src="./ELEFANTA.png" alt="Elefanta decorativa" class="w-24 md:w-28 drop-shadow-xl" />
-</div>
-
+            <img src="https://media.giphy.com/media/l4pM9S0yZ0V80s1a8/giphy.gif" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFD166/E63946?text=GIF+Palhaço+1';" alt="GIF de palhaço feliz" class="rounded-full shadow-lg border-2 border-amarelo-solar animate-float">
+        </div>
+        <!-- GIF de palhaço na seção principal (canto superior direito) -->
+        <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
+            <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
+            <!-- Siga as mesmas instruções acima para o carregamento deste GIF. -->
+            <!-- ***************************************************************************************** -->
+            <img src="https://media.giphy.com/media/2Fazr3qX9q0c6/giphy.gif" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A2D2FF/E63946?text=GIF+Palhaço+2';" alt="GIF de palhaço brincando" class="rounded-full shadow-lg border-2 border-vermelho-vibrante animate-float">
+        </div>
     </section>
 
     <!-- Seção de Contagem Regressiva -->
@@ -258,11 +258,10 @@
             </h3>
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
                 <p class="text-center mb-6 font-poppins text-lg text-gray-700">
-                    <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
                     Para que possamos organizar tudo com carinho, por favor, confirme sua presença.
                 </p>
+                <!-- O Formspree enviará as informações para o e-mail configurado. -->
                 <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
-                <!-- Acesse formspree.io, crie um formulário e copie o ID fornecido -->
                 <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
                     <div>
                         <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
@@ -273,14 +272,15 @@
                         <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <div>
-                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (incluindo crianças):</label>
-                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
+                        <!-- Adicionado 'max="3"' para limitar o número de acompanhantes no HTML -->
+                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
                     </div>
                     <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         Confirmar Presença
                     </button>
                 </form>
-                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante"></div>
             </div>
         </div>
     </section>
@@ -359,6 +359,7 @@
     <script>
         // Data e hora do evento: 11/04/2026 às 15:30h
         const eventDate = new Date('2026-04-11T15:30:00').getTime();
+        const phoneNumber = '5591982078165'; // Número de telefone para o WhatsApp, incluindo código do país e DDD
 
         // Atualiza a contagem regressiva a cada segundo
         const countdownInterval = setInterval(() => {
@@ -393,9 +394,20 @@
             event.preventDefault(); // Evita o recarregamento da página
 
             const rsvpStatusMessage = document.getElementById('rsvp-status-message');
+            rsvpStatusMessage.innerHTML = ''; // Limpa mensagens anteriores
             rsvpStatusMessage.classList.remove('hidden'); // Exibe a mensagem
             rsvpStatusMessage.innerText = 'Enviando...';
             rsvpStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
+
+            const nome = document.getElementById('nome').value;
+            const acompanhantes = parseInt(document.getElementById('acompanhantes').value);
+
+            // Validação adicional para o limite de acompanhantes
+            if (acompanhantes > 3) {
+                rsvpStatusMessage.innerText = 'Máximo de 3 acompanhantes permitidos.';
+                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+                return; // Impede o envio do formulário
+            }
 
             const form = event.target;
             const data = new FormData(form);
@@ -408,19 +420,40 @@
             });
 
             if (response.ok) {
-                rsvpStatusMessage.innerText = 'Obrigado! Sua presença foi confirmada.';
+                let message = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada por e-mail.`;
+                rsvpStatusMessage.innerText = message;
                 rsvpStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
                 form.reset(); // Limpa o formulário
+
+                // Mensagem e link WhatsApp (opcional)
+                const whatsappMessage = encodeURIComponent(
+                    `Olá! Gostaria de confirmar minha presença (${nome}, ${acompanhantes} acompanhante(s)) na festa da Aurora. E-mail: ${document.getElementById('email').value}`
+                );
+                const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+                const whatsappBtn = document.createElement('a');
+                whatsappBtn.href = whatsappLink;
+                whatsappBtn.target = '_blank';
+                whatsappBtn.className = 'mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md';
+                whatsappBtn.innerHTML = 'Enviar Confirmação por WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="inline-block h-5 w-5 ml-2">';
+                
+                // Adiciona o botão WhatsApp após a mensagem de sucesso
+                rsvpStatusMessage.appendChild(document.createElement('br'));
+                rsvpStatusMessage.appendChild(document.createElement('br'));
+                rsvpStatusMessage.appendChild(whatsappBtn);
+
             } else {
                 const errorData = await response.json();
                 rsvpStatusMessage.innerText = `Erro ao confirmar presença: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
                 rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
             }
 
-            // Esconde a mensagem após alguns segundos
-            setTimeout(() => {
-                rsvpStatusMessage.classList.add('hidden');
-            }, 5000);
+            // Esconde a mensagem após alguns segundos (apenas se não houver botão WhatsApp)
+            if (!rsvpStatusMessage.querySelector('a')) {
+                setTimeout(() => {
+                    rsvpStatusMessage.classList.add('hidden');
+                }, 5000);
+            }
         });
 
         // Formulário de Recado para Aurora

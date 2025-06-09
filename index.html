@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Circo da Aurora - 1 Ano</title>
+    <!-- Google Fonts: Fredoka One para títulos e Poppins para texto corrido -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cores personalizadas do Tailwind CSS */
+        :root {
+            --color-vermelho-vibrante: #E63946;
+            --color-azul-claro: #A2D2FF;
+            --color-amarelo-solar: #FFD166;
+            --color-branco: #FFFFFF;
+        }
+
+        .bg-vermelho-vibrante { background-color: var(--color-vermelho-vibrante); }
+        .text-vermelho-vibrante { color: var(--color-vermelho-vibrante); }
+        .border-vermelho-vibrante { border-color: var(--color-vermelho-vibrante); }
+
+        .bg-azul-claro { background-color: var(--color-azul-claro); }
+        .text-azul-claro { color: var(--color-azul-claro); }
+        .border-azul-claro { border-color: var(--color-azul-claro); }
+
+        .bg-amarelo-solar { background-color: var(--color-amarelo-solar); }
+        .text-amarelo-solar { color: var(--color-amarelo-solar); }
+        .border-amarelo-solar { border-color: var(--color-amarelo-solar); }
+
+        /* Tipografia */
+        .font-fredoka-one { font-family: 'Fredoka One', cursive; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-branco); /* Fundo branco base */
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+        /* Efeitos visuais de circo */
+        .circus-stripe-bg {
+            background-image: repeating-linear-gradient(
+                45deg,
+                var(--color-vermelho-vibrante) 0px,
+                var(--color-vermelho-vibrante) 20px,
+                var(--color-branco) 20px,
+                var(--color-branco) 40px
+            );
+            background-size: cover;
+            padding: 2rem 0;
+        }
+
+        .countdown-digit {
+            @apply bg-white text-gray-800 text-5xl font-extrabold p-6 rounded-xl shadow-lg m-2;
+            font-family: 'Fredoka One', cursive;
+            min-width: 120px; /* Garante largura mínima para os dígitos */
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .countdown-digit {
+                @apply text-3xl p-4 m-1;
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Cabeçalho - Tema Circo -->
+    <header class="bg-vermelho-vibrante text-white p-4 shadow-xl font-fredoka-one">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-amarelo-solar drop-shadow-lg">
+                O Circo da Aurora!
+            </h1>
+            <nav>
+                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg">
+                    <li><a href="#inicio" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Início</a></li>
+                    <li><a href="#detalhes" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Detalhes</a></li>
+                    <li><a href="#presenca" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Confirme</a></li>
+                    <li><a href="#fotos" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Fotos</a></li>
+                    <li><a href="#recado" class="hover:text-amarelo-solar transition duration-300 rounded-md p-2">Recado</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de Boas-Vindas / Hero -->
+    <section id="inicio" class="relative bg-azul-claro text-center py-20 px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <!-- Placeholder para ilustração de circo. Substituir por ilustração real. -->
+            <img src="https://placehold.co/1200x600/FFD166/E63946?text=Arte+do+Circo+da+Aurora" alt="Arte temática de circo com tenda e balões" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 container mx-auto text-white">
+            <h2 class="text-5xl md:text-7xl font-fredoka-one mb-4 text-amarelo-solar drop-shadow-xl animate-bounce-slow">
+                É O ANIVERSÁRIO DA AURORA!
+            </h2>
+            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-md">
+                Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
+            </p>
+            <img src="https://placehold.co/200x200/FFFFFF/E63946?text=Foto+Aurora" alt="Foto da Aurora" class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-amarelo-solar shadow-lg mb-8">
+            <p class="text-lg md:text-xl font-poppins max-w-xl mx-auto drop-shadow-md">
+                Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Contagem Regressiva -->
+    <section class="py-12 bg-vermelho-vibrante text-white text-center circus-stripe-bg" id="countdown-section">
+        <h3 class="text-4xl font-fredoka-one mb-8 text-amarelo-solar drop-shadow-lg">Faltam...</h3>
+        <div id="countdown" class="flex justify-center items-center flex-wrap">
+            <div class="countdown-digit">
+                <span id="days">00</span>
+                <div class="text-base mt-2 font-poppins">Dias</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="hours">00</span>
+                <div class="text-base mt-2 font-poppins">Horas</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="minutes">00</span>
+                <div class="text-base mt-2 font-poppins">Minutos</div>
+            </div>
+            <div class="countdown-digit">
+                <span id="seconds">00</span>
+                <div class="text-base mt-2 font-poppins">Segundos</div>
+            </div>
+        </div>
+        <p id="event-message" class="text-2xl font-poppins mt-8 text-white drop-shadow-md hidden">
+            A festa começou! 🎉
+        </p>
+    </section>
+
+    <!-- Seção de Detalhes do Evento -->
+    <section id="detalhes" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+                Detalhes do Espetáculo
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="bg-azul-claro p-8 rounded-xl shadow-lg text-gray-800 border-b-4 border-amarelo-solar">
+                    <h4 class="text-3xl font-fredoka-one mb-4 text-white drop-shadow-md">Quando? Onde?</h4>
+                    <p class="text-lg font-poppins mb-4">
+                        <span class="font-bold text-vermelho-vibrante">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
+                    </p>
+                    <p class="text-lg font-poppins mb-4">
+                        <span class="font-bold text-vermelho-vibrante">Horário:</span> <span id="event-time">XXhXX</span>
+                    </p>
+                    <p class="text-lg font-poppins mb-6">
+                        <span class="font-bold text-vermelho-vibrante">Local:</span> <span id="event-address">Nome do Salão de Festas, Rua Exemplo, 123 - Bairro, Cidade - UF</span>
+                    </p>
+                    <a href="#" target="_blank" class="bg-vermelho-vibrante text-white py-3 px-6 rounded-lg text-lg font-bold hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        Ver no Mapa
+                    </a>
+                </div>
+                <div class="rounded-xl shadow-lg overflow-hidden border-b-4 border-amarelo-solar">
+                    <!-- Placeholder para Google Maps. Substituir por iframe real. -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Confirmação de Presença (RSVP) -->
+    <section id="presenca" class="py-16 px-4 bg-amarelo-solar text-gray-800">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+                Confirme Sua Presença!
+            </h3>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
+                <p class="text-center mb-6 font-poppins text-lg">
+                    Para que possamos organizar tudo com carinho, por favor, confirme sua presença até o dia XX/XX.
+                </p>
+                <form id="rsvp-form" class="space-y-4">
+                    <div>
+                        <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="acompanhantes" class="block text-gray-700 text-sm font-bold mb-2">Número de Acompanhantes (incluindo crianças):</label>
+                        <input type="number" id="acompanhantes" name="acompanhantes" min="0" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent">
+                    </div>
+                    <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        Confirmar Presença
+                    </button>
+                </form>
+                <div id="rsvp-message" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Galeria de Fotos -->
+    <section id="fotos" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+                Galeria de Momentos
+            </h3>
+            <p class="text-center text-lg font-poppins mb-8 text-gray-700">
+                Uma prévia da alegria! Em breve, mais fotos da Aurora para vocês.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Fotos placeholder - Substituir por fotos reais da Aurora -->
+                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/A2D2FF/E63946?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FFD166/E63946?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/E63946/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-azul-claro transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FFFFFF/A2D2FF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recado para Aurora -->
+    <section id="recado" class="py-16 px-4 bg-azul-claro text-gray-800">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-fredoka-one text-vermelho-vibrante text-center mb-10 drop-shadow-lg">
+                Deixe um Recadinho para Aurora!
+            </h3>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-amarelo-solar">
+                <p class="text-center mb-6 font-poppins text-lg">
+                    Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
+                </p>
+                <form id="message-form" class="space-y-4">
+                    <div>
+                        <label for="remetente" class="block text-gray-700 text-sm font-bold mb-2">Seu Nome (Opcional):</label>
+                        <input type="text" id="remetente" name="remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amarelo-solar focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        Enviar Recado
+                    </button>
+                </form>
+                <div id="message-status" class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white p-6 mt-12 rounded-t-lg shadow-inner font-poppins">
+        <div class="container mx-auto text-center text-sm">
+            <p class="mb-4">&copy; 2025 O Circo da Aurora. Feito com amor.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook do Papai</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data do evento (Ano, Mês-1, Dia, Hora, Minuto, Segundo)
+        const eventDate = new Date('2025-12-25T15:00:00').getTime(); // Exemplo: 25 de Dezembro de 2025, 15:00
+
+        // Atualiza a contagem regressiva a cada segundo
+        const countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            // Cálculos para dias, horas, minutos e segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Exibe os resultados
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+            // Se o evento chegou ao fim, para o contador
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = ''; // Limpa os dígitos
+                document.getElementById('event-message').classList.remove('hidden'); // Mostra a mensagem
+                document.getElementById('event-message').innerText = 'A festa começou! 🎉';
+                document.getElementById('countdown-section').classList.remove('circus-stripe-bg');
+                document.getElementById('countdown-section').classList.add('bg-azul-claro');
+            }
+        }, 1000);
+
+        // Formulário de RSVP
+        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const acompanhantes = document.getElementById('acompanhantes').value;
+
+            const rsvpMessage = document.getElementById('rsvp-message');
+            rsvpMessage.classList.remove('hidden'); // Exibe a mensagem
+
+            if (nome && email && acompanhantes !== '') {
+                // Aqui você pode integrar com um serviço de backend ou Firebase
+                // Por enquanto, apenas exibe uma mensagem de sucesso
+                console.log('RSVP Recebido:', { nome, email, acompanhantes });
+                rsvpMessage.innerText = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada.`;
+                this.reset(); // Limpa o formulário
+            } else {
+                rsvpMessage.innerText = 'Por favor, preencha todos os campos obrigatórios.';
+            }
+
+             // Esconde a mensagem após alguns segundos
+             setTimeout(() => {
+                rsvpMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Formulário de Recado para Aurora
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const remetente = document.getElementById('remetente').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const messageStatus = document.getElementById('message-status');
+            messageStatus.classList.remove('hidden'); // Exibe a mensagem
+
+            if (mensagem) {
+                // Aqui você pode integrar com um serviço de backend ou Firebase
+                // Por enquanto, apenas exibe uma mensagem de sucesso
+                console.log('Mensagem para Aurora:', { remetente, mensagem });
+                messageStatus.innerText = `Seu recado foi enviado com sucesso, ${remetente || 'caro(a) convidado(a)'}!`;
+                this.reset(); // Limpa o formulário
+            } else {
+                messageStatus.innerText = 'Por favor, escreva sua mensagem.';
+            }
+
+            // Esconde a mensagem após alguns segundos
+            setTimeout(() => {
+                messageStatus.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Placeholder para data e hora do evento
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('event-date').innerText = new Date(eventDate).toLocaleDateString('pt-BR', options);
+            document.getElementById('event-time').innerText = new Date(eventDate).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        });
+    </script>
+</body>
+</html>

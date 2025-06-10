@@ -104,30 +104,6 @@
         .confetti:nth-child(4n) { background-color: var(--color-branco); animation-delay: 0.5s; }
         .confetti:nth-child(5n) { background-color: var(--color-amarelo-solar); animation-delay: 2.5s; }
   </style>
-  <style>
-   @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-.animate-wiggle {
-  animation: wiggle 1.5s ease-in-out infinite;
-}
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-  </style>
  </head>
  <body class="flex flex-col min-h-screen">
   <!-- Cabeçalho - Tema Circo -->
@@ -199,9 +175,6 @@
     <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-lg text-white">
      Preparem-se para a magia, a alegria e a diversão! O Circo da Aurora está chegando para celebrar seu primeiro aninho!
     </p>
-    <div class="text-white text-xl font-bold mt-4 animate-fade-in-up">
-     📅 11 de Abril de 2026 • ⏰ 15:30h
-    </div>
     <!-- IMAGEM PRINCIPAL DO CIRCO DA AURORA (LOGO) -->
     <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DA IMAGEM ********************** -->
     <!-- Para que esta imagem carregue no seu site publicado (GitHub Pages), você DEVE: -->
@@ -213,48 +186,56 @@
     <!--    Se 'O Circo da Aurora Mágico (1).jpg' estiver dentro de uma PASTA 'images' no seu repositório: -->
     <!--    <img src="images/O Circo da Aurora Mágico (1).jpg" -->
     <!-- ***************************************************************************************** -->
-    <div class="flex flex-col items-center justify-center mt-10">
-     <img alt="Convite de Aniversário da Aurora" class="max-w-[90%] h-auto mx-auto drop-shadow-xl" src="./O Circo da Aurora Mágico.png"/>
-     <p class="text-lg md:text-xl font-poppins mt-6 text-white max-w-xl text-center">
-      Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
+  <div class="flex flex-col items-center justify-center mt-10">
+  <img src="./O Circo da Aurora Mágico.png" alt="Convite de Aniversário da Aurora"
+       class="max-w-[90%] h-auto mx-auto drop-shadow-xl" />
+  <p class="text-lg md:text-xl font-poppins mt-6 text-white max-w-xl text-center">
+    Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial.
+  </p>
+</div>
+
+  </p>
+</section>
+
+      </p>
      </p>
-    </div>
+    </section>
+   </div>
+   <!-- GIF de palhaço na seção principal (canto inferior esquerdo) -->
+   <div class="absolute bottom-5 left-5 md:left-10 z-20 w-24 h-24">
+    <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
+    <!-- Gifs de links externos (como Giphy) podem não carregar em alguns ambientes (ex: GitHub Pages) devido a políticas de segurança (CORS). -->
+    <!-- PARA GARANTIR QUE OS GIFS APAREÇAM: -->
+    <!-- 1. Baixe os GIFs para o seu computador. -->
+    <!-- 2. Faça o UPLOAD dos arquivos GIF para o seu repositório GitHub (na mesma pasta ou em uma pasta 'gifs/', por exemplo). -->
+    <!-- 3. Substitua o 'src' abaixo pelo CAMINHO RELATIVO do GIF no seu repositório. -->
+    <!--    Exemplos: -->
+    <!--    <img src="palhaco1.gif" -->
+    <!--    ou se estiver em uma pasta 'gifs': -->
+    <!--    <img src="gifs/palhaco1.gif" -->
+    <!-- ***************************************************************************************** -->
+    <img alt="Elefanta do circo" src="ELEFANTA.png" width="300"/>
+   </div>
+   <!-- GIF de palhaço na seção principal (canto superior direito) -->
+   <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
+    <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
+    <!-- Siga as mesmas instruções acima para o carregamento deste GIF. -->
+    <!-- ***************************************************************************************** -->
+    <img alt="Rosto de palhaço" src="PALHAÇO.png" width="300"/>
+   </div>
+   <div class="absolute top-10 left-5 hidden md:block animate-bounce">
+    <img alt="Elefanta do Circo" class="w-32 drop-shadow-xl" src="./ELEFANTA.png"/>
+   </div>
+   <div class="absolute bottom-10 right-5 hidden md:block animate-bounce delay-200">
+    <img alt="Palhaço do Circo" class="w-32 drop-shadow-xl" src="./PALHAÇO.png"/>
+   </div>
+   <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 hidden md:block animate-bounce delay-500">
+    <img alt="Elefanta Central" class="w-28 drop-shadow-xl" src="./ELEFANTA.png"/>
+   </div>
+   <div class="absolute top-5 right-10 hidden md:block animate-bounce delay-300">
+    <img alt="Palhaço do Topo" class="w-28 drop-shadow-xl" src="./PALHAÇO.png"/>
    </div>
   </section>
-  <!-- GIF de palhaço na seção principal (canto inferior esquerdo) -->
-  <div class="absolute bottom-5 left-5 md:left-10 z-20 w-24 h-24">
-   <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
-   <!-- Gifs de links externos (como Giphy) podem não carregar em alguns ambientes (ex: GitHub Pages) devido a políticas de segurança (CORS). -->
-   <!-- PARA GARANTIR QUE OS GIFS APAREÇAM: -->
-   <!-- 1. Baixe os GIFs para o seu computador. -->
-   <!-- 2. Faça o UPLOAD dos arquivos GIF para o seu repositório GitHub (na mesma pasta ou em uma pasta 'gifs/', por exemplo). -->
-   <!-- 3. Substitua o 'src' abaixo pelo CAMINHO RELATIVO do GIF no seu repositório. -->
-   <!--    Exemplos: -->
-   <!--    <img src="palhaco1.gif" -->
-   <!--    ou se estiver em uma pasta 'gifs': -->
-   <!--    <img src="gifs/palhaco1.gif" -->
-   <!-- ***************************************************************************************** -->
-   <img alt="Elefanta do circo" src="ELEFANTA.png" width="300"/>
-  </div>
-  <!-- GIF de palhaço na seção principal (canto superior direito) -->
-  <div class="absolute top-5 right-5 md:right-10 z-20 w-24 h-24 transform rotate-12">
-   <!-- ********************** IMPORTANTE PARA O CARREGAMENTO DOS GIFS ********************** -->
-   <!-- Siga as mesmas instruções acima para o carregamento deste GIF. -->
-   <!-- ***************************************************************************************** -->
-   <img alt="Rosto de palhaço" src="PALHAÇO.png" width="300"/>
-  </div>
-  <div class="absolute top-10 left-5 hidden md:block animate-float">
-   <img alt="Elefanta do Circo" class="w-32 drop-shadow-xl" src="./ELEFANTA.png"/>
-  </div>
-  <div class="absolute bottom-10 right-5 hidden md:block animate-float delay-200">
-   <img alt="Palhaço do Circo" class="w-32 drop-shadow-xl" src="./PALHAÇO.png"/>
-  </div>
-  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 hidden md:block animate-float delay-500">
-   <img alt="Elefanta Central" class="w-28 drop-shadow-xl" src="./ELEFANTA.png"/>
-  </div>
-  <div class="absolute top-5 right-10 hidden md:block animate-float delay-300">
-   <img alt="Palhaço do Topo" class="w-28 drop-shadow-xl" src="./PALHAÇO.png"/>
-  </div>
   <!-- Seção de Contagem Regressiva -->
   <section class="py-12 bg-vermelho-vibrante text-white text-center" id="countdown-section">
    <!-- Classe circus-stripe-bg removida -->
@@ -368,11 +349,29 @@
      </p>
      <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULÁRIO RSVP DO FORMSPREE -->
      <!-- Acesse formspree.io, crie um formulário e copie o ID fornecido -->
-     <div class="text-center mt-6">
-      <a class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg" href="https://wa.me/5591982078165?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20na%20festa%20da%20Aurora%20🎪🥳" target="_blank">
-       Confirmar Presença via WhatsApp
-      </a>
-     </div>
+     <form action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-4" id="rsvp-form" method="POST">
+      <div>
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
+        Seu Nome Completo:
+       </label>
+       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="nome" name="Nome" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+        Seu E-mail:
+       </label>
+       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="email" name="Email" required="" type="email"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="acompanhantes">
+        Número de Acompanhantes (incluindo crianças):
+       </label>
+       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="acompanhantes" min="0" name="Acompanhantes" required="" type="number" value="0"/>
+      </div>
+      <button class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md" type="submit">
+       Confirmar Presença
+      </button>
+     </form>
      <div class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden" id="rsvp-status-message">
      </div>
     </div>
@@ -574,8 +573,5 @@
             document.getElementById('event-time').innerText = new Date(eventDate).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
         });
   </script>
-  <audio autoplay="True" hidden="True" loop="True">
-   <source src="sua-musica.mp3" type="audio/mpeg"/>
-  </audio>
  </body>
 </html>

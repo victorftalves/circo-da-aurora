@@ -366,10 +366,13 @@
        <label class="block text-gray-700 text-sm font-bold mb-2" for="acompanhantes">
         Número de Acompanhantes (incluindo crianças):
        </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="acompanhantes" min="0" name="Acompanhantes" required="" type="number" value="0"/>
+       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" <input class="..." id="acompanhantes" min="0" max="3" name="Acompanhantes" required type="number" value="0" />
+
       </div>
       <button class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md" type="submit">
-       Confirmar Presença
+       <div class="text-center mt-6">
+      <a class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg" href="https://wa.me/5591982078165?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20na%20festa%20da%20Aurora%20🎪🥳" target="_blank">
+       Confirmar Presença via WhatsApp
       </button>
      </form>
      <div class="mt-4 text-center text-lg font-bold text-vermelho-vibrante hidden" id="rsvp-status-message">

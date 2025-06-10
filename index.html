@@ -16,18 +16,23 @@
             --color-amarelo-solar: #FFD166;
             --color-branco: #FFFFFF;
         }
-
-        .bg-vermelho-vibrante { background-color: var(--color-vermelho-vibrante); }
-        .text-vermelho-vibrante { color: var(--color-vermelho-vibrante); }
-        .border-vermelho-vibrante { border-color: var(--color-vermelho-vibrante); }
-
-        .bg-azul-claro { background-color: var(--color-azul-claro); }
-        .text-azul-claro { color: var(--color-azul-claro); }
-        .border-azul-claro { border-color: var(--color-azul-claro); }
-
-        .bg-amarelo-solar { background-color: var(--color-amarelo-solar); }
-        .text-amarelo-solar { color: var(--color-amarelo-solar); }
-        .border-amarelo-solar { border-color: var(--color-amarelo-solar); }
+/* Gradiente mais vibrante para seções vermelhas */
+.bg-vermelho-vibrante-gradient {
+    background: linear-gradient(to bottom right, var(--color-vermelho-vibrante), #c22b37); /* Um vermelho mais profundo para o gradiente */
+}
+/* Novo gradiente para seções azuis */
+.bg-azul-claro-gradient {
+    background: linear-gradient(to bottom right, var(--color-azul-claro), #8ec2f9); /* Um azul mais profundo para o gradiente */
+}
+/* NOVO: Fundo decorativo com repetição para estrelas ou padrões */
+.background-pattern-decoration {
+    background-repeat: repeat; /* Repetir o padrão */
+    background-size: 150px; /* Tamanho do padrão, ajuste conforme STAR.png */
+    opacity: 0.4; /* Mantém a opacidade */
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
 
         /* Tipografia */
         .font-fredoka-one { font-family: 'Fredoka One', cursive; }

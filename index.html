@@ -335,13 +335,13 @@
    </div>
   </section>
   <!-- Seção de Confirmação de Presença (RSVP) -->
-  <section class="py-16 px-4 bg-vermelho-vibrante text-gray-800" id="presenca">
-   <!-- Alterado para vermelho vibrante -->
-   <div class="container mx-auto">
-    <h3 class="text-4xl font-fredoka-one text-amarelo-solar text-center mb-10 drop-shadow-lg">
-     <!-- Título alterado para amarelo solar -->
-     Confirme Sua Presença!
-    </h3>
+ <div class="text-center mt-6">
+  <a href="https://wa.me/5591982078165?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20na%20festa%20da%20Aurora%20🎪🥳"
+     target="_blank"
+     class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg">
+    Confirmar Presença via WhatsApp
+  </a>
+</div>
     <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto border-t-4 border-azul-claro">
      <p class="text-center mb-6 font-poppins text-lg text-gray-700">
       <!-- Texto de confirmação de presença. Remover a data limite específica por enquanto. -->
@@ -366,7 +366,7 @@
        <label class="block text-gray-700 text-sm font-bold mb-2" for="acompanhantes">
         Número de Acompanhantes (incluindo crianças):
        </label>
-       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="acompanhantes" min="0" name="Acompanhantes" required="" type="number" value="0"/>
+       <input class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-azul-claro focus:border-transparent" id="acompanhantes" min="0" max="3" name="Acompanhantes" required="" type="number" value="0"/>
       </div>
       <button class="bg-vermelho-vibrante text-white font-bold py-3 px-6 rounded-lg w-full text-lg hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md" type="submit">
        Confirmar Presença
